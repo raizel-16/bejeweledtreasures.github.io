@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bejeweled Treasures</title>
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<style>
+:root{
+    --gold:#e5b80b;
+}
+
+*{
+    margin:0; 
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color: #fff;
+    padding: 1rem;
+    margin: 2rem 0;
+    background: #192841;
+}
+
+.heading span{
+    color:var(--gold);
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #e5b80b;
+    color: #fff;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 2.7rem;
+}
+
+.btn:hover{
+    background: #e0ac69;
+}
+header{
+    position: fixed;
+    top:0; left:0; right:0;
+    background: #192841;
+    padding:2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header .logo{
+    font-size: 3rem;
+    color: #e5b80b;
+    font-weight: bolder;
+}
+header .logo span{
+    color:#fff;
+}
+
+header .navbar a{
+    font-size: 2rem;
+    padding:0 1.5rem;
+    color: #fff;
+}
+
+header .navbar a:hover{
+    color: var(--gold);
+}
+
+header .icons a{
+    font-size: 3rem;
+    color: #fff;
+    margin-left: 1.5rem;
+}
+
+header .icons a:hover{
+    color: var(--gold);
+}
+
+header #toggler{
+    display: none;
+}
+
+header .fa-bars{
+    font-size: 3rem;
+    color:#fff;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0,0,0,.3);
+    display: none;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url(b.png) no-repeat;
+    background-size: cover;
+}
+
+.home .content{
+    max-width: 50rem;
+}
+
+.home .content h3{
+    font-size: 6rem;
+    color: #fff;
+
+}
+
+.home .content span{
+    font-size: 3.5rem;
+    color: var(--gold);
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.home .content p{
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 2rem 0;
+    line-height: 2.5;
+}
+
+.footer {
+    background-color: #fff;
+    color: #e5b80b;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.credits {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* media queries */
+@media (max-width: 991px) {
+
+html{
+    font-size: 55%;
+}
+
+header{
+    padding: 2rem;
+}
+
+section{
+    padding: 2rem;
+}
+
+.home{
+    background-position: left;
+}
+}
+
+@media (max-width: 768px) {
+
+header .fa-bars{
+   display: block;
+}
+
+header .navbar{
+position:absolute;
+top:100%; left:0; right:0;
+background:#fff;
+border-top: .1rem solid rgba(0,0,0,.1);
+clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+header #toggler:checked ~ .navbar{
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+header .navbar a{
+margin:1.5rem;
+padding:1.5rem;
+background:#192841;
+border:.1rem solid rgba(0,0,0,.1);
+display: block;
+}
+
+.home .content h3{
+font-size: 5rem;
+}
+
+.home .content span{
+font-size: 2.5rem;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+}
+
+@media (max-width: 480px) {
+
+html{
+    font-size: 50%;
+}
+
+header{
+    padding: 1rem;
+}
+
+section{
+    padding: 1rem;
+}
+
+.home .content h3{
+font-size: 4.5rem;
+}
+
+.home .content span{
+font-size: 2rem;
+}
+
+.home .content p{
+font-size: 1.2rem;
+}
+
+.btn{
+    padding: .7rem 2.5rem;
+    font-size: 2.2rem;
+}
+
+.footer{
+    font-size: 2rem;
+}
+}
+
+</style>
+<body>
+
+<!-- header section starts -->
+
+<header>
+
+    <input type="checkbox" names="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="#" class="logo">Bejeweled Treasures<span>.</span></a>
+    <nav class="navbar">
+        <a href="home.html">Home</a>
+        <a href="About us.html">About</a>
+        <a href="Products.html">Products</a>
+        <a href="Contact.html">Contact</a>
+    </nav>
+
+    <div class="icons">
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <a href="#" class="fas fa-user"></a>
+    </div>
+
+</header>
+
+ <!-- header section ends -->
+
+<!-- home section starts -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>Elegant Jewelrys</h3>
+        <span>Timeless & Luxurious</span>
+        <p>Bejeweled Treasure offers a stunning collection of exquisite jewelry that are crafted with exceptional attention to detail. Discover the perfect piece to elevate your style and make a lasting impression.</p>
+        <a href="#" class="btn">Shop Now</a>
+    </div>
+</section>
+<!-- home section ends -->
+
+<!--footer section starts-->
+
+<footer class="footer">
+    <div class="container">
+        <p class="credits">© 2024 Bejeweled Treasures. All rights reserved. | Designed by Raizela G. Magno</p>
+    </div>
+  </footer>
+  <!--footer section ends-->
+</body>  
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bejeweled Treasures</title>
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<style>
+:root{
+    --gold:#e5b80b;
+}
+
+*{
+    margin:0; 
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section{
+    padding: 5rem 10%;
+}
+
+.heading{
+    text-align: center;
+    font-size: 6rem;
+    color: #fff;
+    padding: 4rem;
+    margin: 5rem 3rem;
+    background: #192841;
+}
+
+.heading span{
+    color:var(--gold);
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #e5b80b;
+    color: #fff;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 2.7rem;
+}
+
+.btn:hover{
+    background: #e0ac69;
+}
+header{
+    position: fixed;
+    top:0; left:0; right:0;
+    background: #192841;
+    padding:2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header .logo{
+    font-size: 3rem;
+    color: #e5b80b;
+    font-weight: bolder;
+}
+header .logo span{
+    color:#fff;
+}
+
+header .navbar a{
+    font-size: 2rem;
+    padding:0 1.5rem;
+    color: #fff;
+}
+
+header .navbar a:hover{
+    color: var(--gold);
+}
+
+header .icons a{
+    font-size: 3rem;
+    color: #fff;
+    margin-left: 1.5rem;
+}
+
+header .icons a:hover{
+    color: var(--gold);
+}
+
+header #toggler{
+    display: none;
+}
+
+header .fa-bars{
+    font-size: 3rem;
+    color:#fff;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0,0,0,.3);
+    display: none;
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+}
+
+#about-us {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.section-box {
+    background-color: #192841;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #e5b80b;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+    background: #192841;
+}
+
+.section-description-box {
+    border: 1px solid #e5b80b;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+
+.grid-item {
+    position: relative;
+}
+
+.grid-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.grid-image:hover {
+    transform: scale(1.05);
+}
+
+.grid-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.icons-container{
+    background:#fff;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    align-items: center;
+}
+
+.icons-container .icons{
+    background: #192841;
+    border: .1rem solid rgba(0,0,0,.1);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    flex: 1 1 25rem;
+}
+
+.icons-container .icons img{
+    height: 5rem;
+    margin-right: 2rem;
+}
+
+.icons-container .icons h3{
+    color:#e5b80b;
+    padding-bottom: .5rem;
+    font-size: 1.5rem;
+}
+
+.icons-container .icons span{
+    color:#fff;
+    font-size: 1.3rem;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.contact-info .info {
+    margin: 0 20px;
+    text-align: center;
+}
+
+.contact-info .info i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-info .info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-info .info p {
+    font-size: 14px;
+    color: #777;
+}
+
+.footer {
+    background-color: #192841;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.credits {
+    font-size: 14px;
+    margin: 0;
+}
+
+  /* media queries */
+  @media (max-width: 768px) {
+    .about .row {
+        flex-direction: column;
+    }
+  
+    .section-description {
+        width: 100%;
+    }
+  
+    .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+@media (max-width: 991px) {
+
+html{
+    font-size: 55%;
+}
+
+header{
+    padding: 2rem;
+}
+
+section{
+    padding: 2rem;
+}
+
+.home{
+    background-position: left;
+}
+}
+
+@media (max-width: 768px) {
+
+header .fa-bars{
+   display: block;
+}
+
+header .navbar{
+position:absolute;
+top:100%; left:0; right:0;
+background:#fff;
+border-top: .1rem solid rgba(0,0,0,.1);
+clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+header #toggler:checked ~ .navbar{
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+header .navbar a{
+margin:1.5rem;
+padding:1.5rem;
+background:#192841;
+border:.1rem solid rgba(0,0,0,.1);
+display: block;
+}
+
+.home .content h3{
+font-size: 5rem;
+}
+
+.home .content span{
+font-size: 2.5rem;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+}
+
+@media (max-width: 480px) {
+
+html{
+    font-size: 50%;
+}
+
+header{
+    padding: 1rem;
+}
+
+section{
+    padding: 1rem;
+}
+
+.btn{
+    padding: .7rem 2.5rem;
+    font-size: 2.2rem;
+}
+
+.footer{
+    font-size: 2rem;
+}
+}
+</style>
+<body>
+
+<!-- header section starts -->
+
+<header>
+
+  <input type="checkbox" names="" id="toggler">
+  <label for="toggler" class="fas fa-bars"></label>
+
+  <a href="#" class="logo">Bejeweled Treasures<span>.</span></a>
+  <nav class="navbar">
+      <a href="home.html">Home</a>
+      <a href="About us.html">About</a>
+      <a href="Products.html">Products</a>
+      <a href="Contact.html">Contact</a>
+  </nav>
+
+  <div class="icons">
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-shopping-cart"></a>
+      <a href="#" class="fas fa-user"></a>
+  </div>
+
+</header>
+
+<!-- header section ends -->
+
+ <!-- about section starts-->
+
+ <section id="products" class="section">
+    <h1 class="heading">About <span>Us</span></h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="section-box">
+                    <h2 class="section-title">Welcome to Bejeweled</h2>
+                    <div class="section-description">
+                        <div class="section-description-box">
+                            <p>At Bejeweled, we believe that every piece of jewelry tells a unique story. Our passion for exquisite craftsmanship and attention to detail is reflected in our stunning collection of handcrafted jewelry.</p>
+                        </div>
+                        <div class="section-description-box">
+                            <p>Since our establishment, we have been dedicated to providing our customers with the highest quality jewelry that combines timeless elegance with modern design. Each piece is meticulously crafted using only the finest materials, ensuring exceptional beauty and durability.</p>
+                        </div>
+                        <div class="section-description-box">
+                            <p>We pride ourselves on our commitment to ethical sourcing and sustainable practices. Our jewelry is created with love and respect for both the environment and the artisans who bring our designs to life.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="col-md-6">
+                <div class="image-grid">
+                    <div class="grid-item">
+                        <img src="our place.jpg" alt="Our Place" class="grid-image">
+                        <p class="grid-name">Our Place</p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="our best.jpg" alt="Our Best Seller" class="grid-image">
+                        <p class="grid-name">Our Best Seller</p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="limited edition.jpg" alt="Limited Edition" class="grid-image">
+                        <p class="grid-name">Limited Edition</p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="collab.jpg" alt="Collaborations" class="grid-image">
+                        <p class="grid-name">Collaborations</p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="awards.jpg" alt="Awards" class="grid-image">
+                        <p class="grid-name">Awards</p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="customize.jpg" alt="Customize" class="grid-image">
+                        <p class="grid-name">Customize</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about section ends-->
+
+<!-- icons section start-->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <img src="delivery-truck.png" alt="delivery-truck">
+        <div class="info">
+            <h3>Free Delivery</h3>
+            <span>on all orders</span>
+        </div>
+    </div>
+
+    <div class="icons">
+        <img src="money-back.png" alt="money-back">
+        <div class="info">
+            <h3>10 days return</h3>
+            <span>money back guarantee</span>
+        </div>
+    </div>
+
+    <div class="icons">
+        <img src="special-offer (1).png" alt="special-offer">
+        <div class="info">
+            <h3>Gifts & Offers</h3>
+            <span>on all orders</span>
+        </div>
+    </div>
+
+    <div class="icons">
+        <img src="credit-card.png" alt="credit-card">
+        <div class="info">
+            <h3>secure payments</h3>
+            <span>protected by paypal</span>
+        </div>
+    </div>
+</section>
+<div class="contact-info">
+    <div class="info">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Address</h3>
+        <p>505 Main Street, Somewhere, Philippines</p>
+    </div>
+    <div class="info">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Phone</h3>
+        <p>+1454365456</p>
+    </div>
+    <div class="info">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>@bejeweledtreasures.com</p>
+    </div>
+</div>
+<!-- icons section ends-->
+
+<!--footer section starts-->
+
+<footer class="footer">
+    <div class="container">
+        <p class="credits">© 2024 Bejeweled Treasures. All rights reserved. | Designed by Raizela G. Magno</p>
+    </div>
+  </footer>
+  <!--footer section ends-->
+</body> 
+</html>
+
+

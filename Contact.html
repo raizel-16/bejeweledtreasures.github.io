@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bejeweled Treasures</title>
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<style>
+    :root{
+    --gold:#e5b80b;
+}
+
+*{
+    margin:0; 
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section{
+    padding: 5rem 10%;
+}
+
+.heading{
+    text-align: center;
+    font-size: 6rem;
+    color: #fff;
+    padding: 4rem;
+    margin: 5rem 3rem;
+    background: #192841;
+}
+
+.heading span{
+    color:var(--gold);
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #192841;
+    color: #fff;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 2.7rem;
+}
+
+.btn:hover{
+    background: #e5b80b;
+}
+header{
+    position: fixed;
+    top:0; left:0; right:0;
+    background: #192841;
+    padding:2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header .logo{
+    font-size: 3rem;
+    color: #e5b80b;
+    font-weight: bolder;
+}
+header .logo span{
+    color:#fff;
+}
+
+header .navbar a{
+    font-size: 2rem;
+    padding:0 1.5rem;
+    color: #fff;
+}
+
+header .navbar a:hover{
+    color: var(--gold);
+}
+
+header .icons a{
+    font-size: 3rem;
+    color: #fff;
+    margin-left: 1.5rem;
+}
+
+header .icons a:hover{
+    color: var(--gold);
+}
+
+header #toggler{
+    display: none;
+}
+
+header .fa-bars{
+    font-size: 3rem;
+    color:#fff;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0,0,0,.3);
+    display: none;
+}
+
+.contact .row{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.contact .row form{
+    flex: 1 1 40rem;
+    padding:2rem 2.5rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+    border: .1rem solid rgba(0,0,0,.1);
+    background:#192841;
+    border-radius: .5rem;
+}
+
+.contact .row .image{
+    flex: 1 1 40rem;
+}
+
+.contact .row .image img{
+    width: 100%;
+}
+
+.contact .row form .box{
+   padding: 1rem;
+   font-size: 1.7rem;
+   color:#000;
+   text-transform: none;
+   border:.1rem solid rgba(0,0,0,.1); 
+   border-radius: .5rem;
+   margin: .7rem 0;
+   width: 100%;
+}
+
+.contact .row form .box:focus{
+    border-color: #fff;
+ }
+
+ .contact .row form texture{
+    height: 15rem;
+    resize: none;
+ }
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.contact-info .info {
+    margin: 0 20px;
+    text-align: center;
+}
+
+.contact-info .info i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-info .info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-info .info p {
+    font-size: 14px;
+    color: #777;
+}
+
+.footer {
+    background-color: #192841;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.credits {
+    font-size: 14px;
+    margin: 0;
+}
+
+ /* media queries */
+@media (max-width:991px){
+
+html{
+    font-size: 55%;
+}
+
+header{
+    padding: 2rem;
+}
+
+section{
+    padding: 2rem;
+}
+
+.home{
+    background-position: left;
+}
+}
+
+@media (max-width:768px){
+
+header .fa-bars{
+   display: block;
+}
+
+header .navbar{
+position:absolute;
+top:100%; left:0; right:0;
+background:#fff;
+border-top: .1rem solid rgba(0,0,0,.1);
+clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+header #toggler:checked ~ .navbar{
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+header .navbar a{
+margin:1.5rem;
+padding:1.5rem;
+background:#192841;
+border:.1rem solid rgba(0,0,0,.1);
+display: block;
+}
+
+.home .content h3{
+font-size: 5rem;
+}
+
+.home .content span{
+font-size: 2.5rem;
+}
+
+.icons-container .icons h3{
+font-size: 2rem;
+}
+
+.icons-container .icons span{
+font-size: 1.7rem;
+}
+}
+
+@media (max-width:450px){
+
+html{
+    font-size: 50%;
+}
+@media (max-width: 768px) {
+.product-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+.product-container {
+     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+}
+}
+</style>
+
+<body>
+    <!-- header section starts -->
+
+    <header>
+
+        <input type="checkbox" names="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+
+        <a href="#" class="logo">Bejeweled Treasures<span>.</span></a>
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+            <a href="About us.html">About</a>
+            <a href="Products.html">Products</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+
+        <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-user"></a>
+        </div>
+
+    </header>
+
+     <!-- header section ends -->
+
+
+<!--contact section starts-->
+<section class="contact">
+    <h1 class="heading">Contact <span>Us</span></h1>
+    <div class="row">
+        <form action="">
+            <input type="text" placeholder="Name" class="box">
+            <input type="email" placeholder="Email" class="box">
+            <input type="number" placeholder="Phone" class="box">
+            <textarea name="" class="box" placeholder="Message" cols="30" rows="10"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+        <div class="image">
+            <img src="model 1.jpg" alt="Background">
+        </div>
+    </div>
+    <div class="contact-info">
+        <div class="info">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Address</h3>
+            <p>505 Main Street, Somewhere, Philippines</p>
+        </div>
+        <div class="info">
+            <i class="fas fa-phone-alt"></i>
+            <h3>Phone</h3>
+            <p>+1454365456</p>
+        </div>
+        <div class="info">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>@bejeweledtreasures.com</p>
+        </div>
+    </div>
+</section>
+<!--contact section ends-->
+<!--footer section starts-->
+
+<footer class="footer">
+    <div class="container">
+        <p class="credits">© 2024 Bejeweled Treasures. All rights reserved. | Designed by Raizela G. Magno</p>
+    </div>
+  </footer>
+  <!--footer section ends-->
+</body>
+</html>
