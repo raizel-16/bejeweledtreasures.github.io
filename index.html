@@ -37,15 +37,15 @@ html{
 }
 
 section{
-    padding: 2rem 9%;
+    padding: 5rem 10%;
 }
 
 .heading{
     text-align: center;
-    font-size: 4rem;
+    font-size: 6rem;
     color: #fff;
-    padding: 1rem;
-    margin: 2rem 0;
+    padding: 4rem;
+    margin: 5rem 3rem;
     background: #192841;
 }
 
@@ -79,13 +79,16 @@ header{
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
 }
 
-header .logos span img{
-    width: 10%;
-    height: 10%;
-    margin-right: 35rem;
-    
+header .logo{
+    font-size: 3rem;
+    color: #e5b80b;
+    font-weight: bolder;
 }
 
+header .logo span{
+    font-size: 3rem;
+    color: #fff;
+}
 
 header .navbar a{
     font-size: 2rem;
@@ -100,7 +103,7 @@ header .navbar a:hover{
 header .icons a{
     font-size: 3rem;
     color: #fff;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
 }
 
 header .icons a:hover{
@@ -426,105 +429,86 @@ header .fa-bars{
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }
+/* media queries */
 @media (max-width:991px){
 
-    html{
-        font-size: 55%;
-    }
-
-    header{
-        padding: 2rem;
-    }
-
-    header .icons a{
-    font-size: 3rem;
-    color: #fff;
-    margin-left: 3rem;
+html{
+    font-size: 55%;
 }
 
-header .icons a:hover{
-    color: var(--gold);
+header{
+    padding: 2rem;
 }
 
-    section{
-        padding: 2rem;
-    }
-    
-    .home{
-        background-position: left;
-    }
+section{
+    padding: 2rem;
+}
+
+.home{
+    background-position: left;
+}
 }
 
 @media (max-width:768px){
-   
-    header .logos span img{
-    width: 15%;
-    height: 15%;
-    margin-right: 35rem;
-    
-}
 
 header .fa-bars{
-    display: none;
+   display: block;
 }
 
-   }
-
-   header .navbar{
-    position:absolute;
-    top:100%; left:0; right:0;
-    background:#fff;
-    border-top: .1rem solid rgba(0,0,0,.1);
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+header .navbar{
+position:absolute;
+top:100%; left:0; right:0;
+background:#fff;
+border-top: .1rem solid rgba(0,0,0,.1);
+clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
 header #toggler:checked ~ .navbar{
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 header .navbar a{
-    margin:1.5rem;
-    padding:1.5rem;
-    background:#192841;
-    border:.1rem solid rgba(0,0,0,.1);
-    display: block;
+margin:1.5rem;
+padding:1.5rem;
+background:#192841;
+border:.1rem solid rgba(0,0,0,.1);
+display: block;
 }
 
 .home .content h3{
-    font-size: 5rem;
+font-size: 5rem;
 }
 
 .home .content span{
-    font-size: 2.5rem;
+font-size: 2.5rem;
 }
 
 .icons-container .icons h3{
-    font-size: 2rem;
+font-size: 2rem;
 }
 
 .icons-container .icons span{
-    font-size: 1.7rem;
+font-size: 1.7rem;
 }
-
+}
 
 @media (max-width:450px){
 
-    html{
-        font-size: 50%;
-    }
-@media (max-width: 768px) {
-    .product-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        }
-    }
-    
-@media (max-width: 480px) {
-    .product-container {
-         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
+html{
+    font-size: 50%;
 }
+@media (max-width: 768px) {
+.product-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
 
+@media (max-width: 480px) {
+.product-container {
+     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+}
+}
 </style>
 <body>
 
@@ -535,8 +519,7 @@ header .navbar a{
         <label for="toggler" class="fas fa-bars"></label>
 
         
-        <div class="logos"><span><img src="logo.png" alt="logo"></span></a>
-        </div>
+        <a href="#" class="logo">Bejeweled Treasures<span>.</span></a>
         <nav class="navbar">
             <a href="home.html">Home</a>
             <a href="About us.html">About</a>
