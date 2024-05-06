@@ -80,12 +80,15 @@ header{
 }
 
 header .logo{
-    font-size: 3rem;
+    font-size: 4rem;
     color: #e5b80b;
     font-weight: bolder;
 }
-header .logo span{
-    color:#fff;
+header .logo span img{
+    width: 3rem;
+    height: 3rem;
+    padding:0.1rem 0.1rem;
+    
 }
 
 header .navbar a{
@@ -513,11 +516,10 @@ header .navbar a{
     <!-- header section starts -->
 
     <header>
-
         <input type="checkbox" names="" id="toggler">
         <label for="toggler" class="fas fa-bars"></label>
 
-        <a href="#" class="logo">Bejeweled Treasures<span>.</span></a>
+        <a href="#" class="logo"><span><img src="logo.png" alt="logo"></span>Bejeweled Treasures</a>
         <nav class="navbar">
             <a href="home.html">Home</a>
             <a href="About us.html">About</a>
@@ -526,7 +528,6 @@ header .navbar a{
         </nav>
 
         <div class="icons">
-            <a href="#" class="fas fa-heart"></a>
             <a href="#" class="fas fa-shopping-cart"></a>
         </div>
 
@@ -594,6 +595,10 @@ header .navbar a{
                       <img src="awards.jpg" alt="Awards" class="grid-image">
                       <p class="grid-name">Awards</p>
                   </div>
+                  <div class="grid-item">
+                    <img src="Sales.jpg" alt="sales" class="grid-image">
+                    <p class="grid-name">Sales</p>
+                </div>
               </div>
           </div>
       </div>

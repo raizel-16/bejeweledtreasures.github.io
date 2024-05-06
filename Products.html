@@ -79,13 +79,17 @@ header{
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
 }
 
+
 header .logo{
-    font-size: 3rem;
+    font-size: 4rem;
     color: #e5b80b;
     font-weight: bolder;
 }
-header .logo span{
-    color:#fff;
+header .logo span img{
+    width: 3rem;
+    height: 3rem;
+    padding:0.1rem 0.1rem;
+    
 }
 
 header .navbar a{
@@ -321,11 +325,10 @@ section{
     <!-- header section starts -->
 
     <header>
-
         <input type="checkbox" names="" id="toggler">
         <label for="toggler" class="fas fa-bars"></label>
 
-        <a href="#" class="logo">Bejeweled Treasures<span>.</span></a>
+        <a href="#" class="logo"><span><img src="logo.png" alt="logo"></span>Bejeweled Treasures</a>
         <nav class="navbar">
             <a href="home.html">Home</a>
             <a href="About us.html">About</a>
@@ -334,7 +337,6 @@ section{
         </nav>
 
         <div class="icons">
-            <a href="#" class="fas fa-heart"></a>
             <a href="#" class="fas fa-shopping-cart"></a>
         </div>
 
